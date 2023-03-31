@@ -12,4 +12,17 @@ async function getWeatherByLocation(city){
         origin: "cros" });
 
         const respData = await resp.json();
+
+        addWeatherTopage(respData);
+    }
+
+    function addWeatherTopage(data){
+        const temp = Ktoc(data.main.temp);
+
+        const weather = document.createElement('div')
+        weather.classList.add('weather');
+
+        weather.innerHTML = `
+                    <h2><img src = "https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+                    )`
     }
