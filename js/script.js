@@ -29,5 +29,14 @@ async function getWeatherByLocation(city){
                     <small>${data.weather[0].main}</small>
                     `;
 
-                    
+                    main.innerHTML="";
+                    main.appendChild(weather);
+    };
+    function Ktoc(K){
+        return Math.floor(K - 273.15);
+    }
+
+    
+
+
     }
