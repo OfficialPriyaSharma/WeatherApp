@@ -36,7 +36,15 @@ async function getWeatherByLocation(city){
         return Math.floor(K - 273.15);
     }
 
+    form.addEventListener('submit',(e) =>{
+        e.preventDeafult();
+        const city = search.value;
+
+        if(city){
+            getWeatherByLocation(city)
+        }
+    });
+
+
+
     
-
-
-    }
