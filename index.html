@@ -6,14 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.in.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
 </head>
 <body>
-  <form id="form">
+  <div class="loading">
+    <div class="spinner">
+      <div class="dot1">
+        <div class="dot2">
+        </div>
+      </div>
+      <section id="main">
+        <div class="bg-primary w-section text-shadow">
+          <div class="conatiner">
+            <div class="row text-white w-header">
+              <div class="col-sm-8 col-sm-offset-2 col-md-offset-3">
+                <div class="row">
+                  <div class="col-xs-7">
+                    <form id="f_locator">
+                      <div id="w-search-tip" class="tooltiptext text-light">
+                        <p>You can get weather by city name or city name and <a href="https://www.iso.org/obp/ui/#search" class="text-accent" target="_blank">iso country code (alpha-2 code</a> divided by comma.</p>
+                        <h5>Example:</h5>
+                        
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- <form id="form">
       <input type="text" id="search" placeholder="Search By Location" autocomplete="off">
   </form>
   <main id="main">
 
-  </main>
+  </main> -->
 
   <script src="./js/app.js"></script>
 </body>
