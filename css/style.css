@@ -74,3 +74,11 @@
             .text-shadow {
                 text-shadow: 1px 1px 1px rgba(0,0,0,.4);
             }
+            .hr-title {
+                border-width: 2px;
+                max-width: 30%;
+                margin: 15px auto;
+            }
+            .hr-title-primary {
+                border-color: #039be5;
+            }
