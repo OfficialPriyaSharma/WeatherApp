@@ -165,3 +165,14 @@
                 vertical-align: top;
             }
 
+            .min-max-block {
+                margin-top: 30px;
+                margin-left: 10px;
+            }
+            .min-max-block p {
+                margin: 0;
+            }
+            .w-desc-box {
+                margin-top: 30px;
+            }
+
