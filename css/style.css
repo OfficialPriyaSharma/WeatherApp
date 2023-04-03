@@ -82,3 +82,18 @@
             .hr-title-primary {
                 border-color: #039be5;
             }
+            /* weather top section */
+            .w-section {
+                padding: 30px 0 90px 0;
+            }
+            .w-header, .w-main {
+                margin-bottom: 20px;
+            }
+            .w-header .glyphicon-map-marker {
+                margin-top: 5px;
+            }
+            .w-header input {
+                float: left;
+                min-width: 85%;
+                max-width: 90%;
+            }
