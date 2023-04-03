@@ -141,4 +141,27 @@
                 transition: all 0.3s;
                 line-height: 30px;
             }
+            #date {
+                line-height: 30px;
+            }
+            .wi-main {
+                font-size: 5.5em;
+                position: relative;
+                vertical-align: top;
+                top: 15px;
+                margin-bottom: 30px;
+                margin-right: 20px;
+            }
+            #temperature {
+                font-size: 4em;
+                line-height: 1.7em;
+                vertical-align: top;
+            }
+            .unit-block, .min-max-block {
+                display: inline-block;
+            }
+            .unit-block {
+                margin-left: -9px;
+                vertical-align: top;
+            }
 
