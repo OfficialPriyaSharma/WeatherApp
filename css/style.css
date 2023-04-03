@@ -41,3 +41,14 @@
                     transform: translate(0px,0px); opacity: 1;
                 }
             }
+
+            @keyframes pBy {
+                from { 
+                    -webkit-transform: translate(0px,-50px); opacity: 0;
+                    transform: translate(0px,-50px); opacity: 0;
+                }
+                to { 
+                    -webkit-transform: translate(0px,0px); opacity: 1;
+                    transform: translate(0px,0px); opacity: 1;
+                }
+            }
