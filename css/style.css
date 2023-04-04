@@ -379,4 +379,29 @@
                 font-size: 21px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
                 box-sizing: border-box;
             }
+            .onoffswitch-inner:before {
+                content: "°C";
+                padding-left: 10px;
+                background-color: #333; color: #B2FF59;
+            }
+            .onoffswitch-inner:after {
+                content: "°F";
+                padding-right: 10px;
+                background-color: #333; color: #B2FF59;
+                text-align: right;
+            }
+            .onoffswitch-switch {
+                display: block; width: 32px; margin: 0px;
+                background: #EEE;
+                position: absolute; top: 0; bottom: 0;
+                right: 48px;
+                border: 2px solid #CCC; border-radius: 20px;
+                transition: all 0.3s ease-in 0s; 
+            }
+            .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+                margin-left: 0;
+            }
+            .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+                right: 0px; 
+            }
 
