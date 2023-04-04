@@ -245,4 +245,44 @@
       /* https://codepen.io/sinapsis7 */
             /* weather icon animation */
 
+            @keyframes wi-scale {
+                0%,100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(0.8);
+                }
+            }
+            @keyframes wi-rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(45deg);
+                }
+            }
+            @keyframes wi-moveX {
+                0%,100% {
+                    transform: translate(0,0);
+                }
+                50% {
+                    transform: translate(-20px,0);
+                }
+            }
+            @keyframes wi-moveY {
+                0%,100% {
+                    transform: translate(0,0);
+                }
+                50% {
+                    transform: translate(0,20px);
+                }
+            }
+            @keyframes wi-fade {
+                0%,100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0;
+                }
+            }
 
