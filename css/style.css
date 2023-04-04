@@ -192,4 +192,31 @@
                 -moz-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
                 box-shadow: 0 0 10px 0 rgba(0,0,0,0.30);
             }
+            .card-header {
+                background-color: #DDD;
+                position: relative;
+            }
+            .card-header > img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            .card-title {
+                color: #fff;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 20px;
+            }
+            .card-image {
+                max-height: 60%;
+                overflow: hidden;
+                position: relative;
+            }
+            .thumbnail .caption {
+                padding: 20px;
+            }
+            .card-content p {
+                margin: 0;
+            }
 
