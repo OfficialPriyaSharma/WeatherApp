@@ -176,3 +176,20 @@
                 margin-top: 30px;
             }
 
+            /* end weather top section */
+
+
+            /* weather card section */
+            .card-section {
+                margin-top: -80px;
+            }
+            .thumbnail {
+                padding: 0;
+                border: none;
+                border-radius: 3px;
+                background-color: #FFF;
+                -webkit-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.30);
+            }
+
