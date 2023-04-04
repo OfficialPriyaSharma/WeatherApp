@@ -286,3 +286,37 @@
                 }
             }
 
+            /* end weather icon animation */
+            
+            /* main animation */
+            @keyframes scale {
+                from { transform: scale(0,0) translate(0px,-550px); }
+                to { transform: scale(1,1) translate(0px,0px); }
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            /*loading animation*/
+            .loading {
+                width: 100%;
+                height: 100%;
+                background-color: #039be5;
+                display: none;
+                position: absolute;
+                z-index: 1;
+            }
+            .spinner {
+                top: 40%;
+                margin: 100px auto;
+                width: 40px;
+                height: 40px;
+                position: relative;
+                text-align: center;
+                
+                -webkit-animation: sk-rotate 2.0s infinite linear;
+                animation: sk-rotate 2.0s infinite linear;
+            }
+
