@@ -235,3 +235,14 @@
                 border: none;
             }
 
+            .d-min-temp {
+                color: #039be5;
+            }
+            .d-max-temp {
+                color: #ef5350;
+            }
+            /* end weather card section */
+      /* https://codepen.io/sinapsis7 */
+            /* weather icon animation */
+
+
