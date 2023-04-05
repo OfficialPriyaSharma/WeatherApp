@@ -45,3 +45,10 @@ Weather.prototype.setLocation = function () {
       var icon = {};
       icon.name = "na";
       icon.animation = "wi-scale";
+
+      function between(min, max, group, animation) {
+        if (wId >= min && wId < max) {
+          icon.name = group ? group : "na";
+          icon.animation = animation ? animation : "wi-scale";
+        }
+      }
