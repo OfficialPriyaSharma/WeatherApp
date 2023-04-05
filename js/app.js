@@ -27,3 +27,14 @@ Weather.prototype.getLocation = function () {
     this.forecast();
   }
 };
+
+Weather.prototype.setLocation = function () {
+    //set location from input text
+    $("#f_locator").on("submit", function (e) {
+      e.preventDefault();
+      this.location = $("#location").val();
+      this.currentWeather();
+      this.forecast();
+      this.loadAnimation();
+    }.bind(this));
+  };
