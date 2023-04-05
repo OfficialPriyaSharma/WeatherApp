@@ -38,3 +38,10 @@ Weather.prototype.setLocation = function () {
       this.loadAnimation();
     }.bind(this));
   };
+
+  Weather.prototype.getWeatherIcon = function (wId, sunrise, sunset) {
+    //get weather icon passing returned ID of openweather API. Optional sunrise and sunset time, to determine if is day or night type icon. Return an object with icon name and icon animation properties.
+    if (wId) {
+      var icon = {};
+      icon.name = "na";
+      icon.animation = "wi-scale";
