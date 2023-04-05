@@ -52,3 +52,28 @@ Weather.prototype.setLocation = function () {
           icon.animation = animation ? animation : "wi-scale";
         }
       }
+
+      between(200, 300, "thunderstorm", "wi-fade");
+    between(300, 400, "showers", "wi-moveY");
+    between(500, 600, "rain", "wi-moveY");
+    between(600, 700, "snow", "wi-moveY");
+    between(700, 800, "na", "wi-fade");
+    between(801, 900, "cloudy", "wi-moveX");
+    between(900, 1000, "na");
+    var cond = {
+      200: "storm-showers",
+      201: "storm-showers",
+      202: "thunderstorm",
+      500: "rain-mix",
+      501: "rain-mix",
+      502: "rain",
+      511: "sleet",
+      520: "rain-mix",
+      521: "rain-mix",
+      600: "snow",
+      611: "sleet",
+      701: "fog",
+      741: "fog",
+      905: "windy",
+      906: "hail"
+    };
