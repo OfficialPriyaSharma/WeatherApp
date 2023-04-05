@@ -19,3 +19,11 @@ Weather.prototype.getLocation = function () {
     "regionName": "Buenos Aires F.D.",
     "status": "success"
   };
+
+  if (res.status === "success") {
+    document.getElementById("location").value = res.city + ", " + res.countryCode;
+    this.location = res.city + ", " + res.countryCode;
+    this.currentWeather();
+    this.forecast();
+  }
+};
