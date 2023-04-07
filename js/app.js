@@ -156,3 +156,19 @@ Weather.prototype.currentWeather = function () {
         }
       }
     }
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather", {
+      q: this.location,
+      units: "metric",
+      appid: "bc1301b0b23fe6ef52032a7e5bb70820"
+    }, function (json) {
+      var wId = json.weather[0].id;
+
+      if (wId) {
+        var icon = this.getWeatherIcon(wId, json.sys.sunrise, json.sys.sunset);
+        this.displayWeatherIcon("#wicon-main", icon);
+      }
+
+      setMain(json);
+    }.bind(this));
+  }
+}; //end currentWeather
