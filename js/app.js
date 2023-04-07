@@ -131,3 +131,28 @@ Weather.prototype.setLocation = function () {
     return icon;
   }
 }; //end getWeatherIcon
+Weather.prototype.displayWeatherIcon = function (selector, icon) {
+  //display weather icon. first arg is where to display. Second arg is what returned from getWeatherIcon method.
+  if (selector && typeof icon == "object") {
+    if (icon.name != "na") {
+      $(selector).addClass(icon.name);
+      animate(selector, icon.animation, 2000, 0, "linear", "infinite");
+    }
+  }
+};
+
+Weather.prototype.currentWeather = function () {
+  //get current weather from openweather API, format, and display it.
+  if (this.location) {
+    function setMain(res) {
+      if (res.main) {
+        $("#temperature").text(Math.round(res.main.temp) + "°");
+        $("#description").text(res.weather[0].description);
+
+        if (res.main.humidity) {
+          $("#humidity").text(res.main.humidity);
+        } else {
+          $("#humidity").text("0");
+        }
+      }
+    }
