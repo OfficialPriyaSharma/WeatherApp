@@ -93,3 +93,16 @@ Weather.prototype.setLocation = function () {
       961: "storm-warning",
       962: "hurricane"
     };
+    var dayCond = {
+      721: "haze",
+      800: "sunny"
+    };
+    var nightCond = {
+      800: "clear",
+      701: "fog",
+      741: "fog"
+    };
+    icon.name = cond[wId] ? cond[wId] : icon.name;
+    icon.name = neutralCond[wId] ? neutralCond[wId] : icon.name;
+    icon.name = dayCond[wId] ? dayCond[wId] : icon.name;
+    var time = "day";
