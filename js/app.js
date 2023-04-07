@@ -77,3 +77,19 @@ Weather.prototype.setLocation = function () {
       905: "windy",
       906: "hail"
     };
+    var neutralCond = {
+      711: "smoke",
+      731: "sandstorm",
+      761: "dust",
+      762: "volcano",
+      781: "tornado",
+      900: "tornado",
+      902: "hurricane",
+      903: "snowflake-cold",
+      904: "hot",
+      958: "gale-warning",
+      959: "gale-warning",
+      960: "storm-warning",
+      961: "storm-warning",
+      962: "hurricane"
+    };
