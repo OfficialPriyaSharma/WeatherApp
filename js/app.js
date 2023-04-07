@@ -106,3 +106,28 @@ Weather.prototype.setLocation = function () {
     icon.name = neutralCond[wId] ? neutralCond[wId] : icon.name;
     icon.name = dayCond[wId] ? dayCond[wId] : icon.name;
     var time = "day";
+    if (sunrise && sunset) {
+      var now = Date.now() / 1000;
+      var srDate = new Date(sunrise * 1000);
+
+      if (srDate.getDate() == new Date().getDate()) {
+        if (now <= sunrise && now >= sunset) {
+          time = nightCond[wId] ? "night" : "night-alt";
+          icon.name = nightCond[wId] ? nightCond[wId] : icon.name;
+        }
+      } else {
+        time = nightCond[wId] ? "night" : "night-alt";
+        icon.name = nightCond[wId] ? nightCond[wId] : icon.name;
+      }
+    }
+
+    if (icon.name != "na" && !neutralCond[wId]) {
+      icon.name = "wi-" + time + "-" + icon.name;
+    } else {
+      icon.name = "wi-" + icon.name;
+    }
+
+    icon.animation = icon.name == "wi-day-sunny" ? "wi-rotate" : icon.animation;
+    return icon;
+  }
+}; //end getWeatherIcon
