@@ -172,3 +172,31 @@ Weather.prototype.currentWeather = function () {
     }.bind(this));
   }
 }; //end currentWeather
+
+Weather.prototype.forecast = function () {
+  //get forecast (4 days) weather from openweather API, format, and display it.
+  function setForecast(res) {
+    this.daily = [];
+    var list = res.list;
+
+    for (var i = 0, len = list.length; i < len; i++) {
+      this.daily[i] = this.daily[i] ? this.daily[i] : {};
+      this.daily[i].maxTemp = Math.round(list[i].temp.max);
+      this.daily[i].minTemp = Math.round(list[i].temp.min);
+      this.daily[i].day = new Date(list[i].dt * 1000).getDay();
+      var iconId = list[i].weather[0].id;
+      this.daily[i].icon = this.getWeatherIcon(iconId);
+    }
+  }
+
+  function displayForecast() {
+    var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        _this = this;
+
+    $(".days-box").children(".col-xs-3").each(function (index) {
+      $(this).children('.day').text(days[_this.daily[index].day]);
+      $(this).find('.d-min-temp').text(_this.daily[index].minTemp + "°");
+      $(this).find('.d-max-temp').text(_this.daily[index].maxTemp + "°");
+      $(this).find('.wi').addClass(_this.daily[index].icon.name);
+    });
+  }
