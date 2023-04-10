@@ -210,3 +210,23 @@ Weather.prototype.forecast = function () {
     displayForecast.call(this);
   }.bind(this));
 };
+Weather.prototype.setUnit = function () {
+  //Switch between Celsius and Farhenheit
+  var prevUnit = "C";
+  $("#unit-switch").on("click", function () {
+    var newUnit = prevUnit == "C" ? "F" : "C";
+    $("span:contains('°')").each(function (index, el) {
+      var temp_current = parseFloat($(el).text());
+
+      if (newUnit == "F") {
+        var temp_new = Math.round(temp_current * 1.8 + 32);
+      } else if (newUnit == "C") {
+        var temp_new = Math.round((temp_current - 32) / 1.8);
+      }
+
+      $(el).text(temp_new + "°");
+      animate(el, "fadeIn", 400, 0, "ease-out");
+    });
+    prevUnit = newUnit;
+  });
+};
