@@ -230,3 +230,36 @@ Weather.prototype.setUnit = function () {
     prevUnit = newUnit;
   });
 };
+Weather.prototype.loadAnimation = function () {
+  $(".loading").css("display", "block");
+  var countAjax = 0;
+  $(document).ajaxComplete(function () {
+    countAjax++;
+
+    if (countAjax == 2) {
+      $(".loading").fadeOut();
+      loadTooltips();
+      animate(".days-box", "scale", 400, 500, "ease-out");
+      var delayAnim = 1300;
+      $(".days-box").children(".col-xs-3").each(function () {
+        animate(this, "fadeIn", 350, delayAnim, "ease-out");
+        delayAnim += 350;
+      });
+    }
+  });
+}; //Animation using CSS @keyframes
+
+
+function animate(selector, keyFrameName, duration, delay = 0, timing = "ease", iteration = 1) {
+  //jQuery selector; CSS keyframes name; duration in ms; delay in ms;
+  $(selector).css({
+    "visibility": "hidden"
+  });
+  setTimeout(function () {
+    $(selector).css({
+      "visibility": "visible"
+    });
+    $(selector).css({
+      "animation": keyFrameName + " " + duration + "ms " + timing + " " + iteration
+    });
+  }, delay);
