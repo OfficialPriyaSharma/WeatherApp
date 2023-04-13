@@ -295,3 +295,11 @@ function loadTooltips() {
         "left": parentPosition.left + "px"
       });
     }
+
+    function hideTooltip() {
+      $(tooltip).on("mouseenter", stopTimerHide);
+
+      function stopTimerHide() {
+        clearTimeout(timerHide);
+        $(tooltip).on("mouseleave", hideTooltip);
+      }
