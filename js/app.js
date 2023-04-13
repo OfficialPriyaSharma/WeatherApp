@@ -274,3 +274,16 @@ function animate(selector, keyFrameName, duration, delay = 0, timing = "ease", i
 
 ;
 /* https://codepen.io/sinapsis7 */
+
+function loadTooltips() {
+  //search for elements that have data-tooltips attributes on the web page, and display it.
+  $("[data-tooltip]").each(function () {
+    var tag = $(this)[0].tagName.toLowerCase();
+    var tooltip = $(this).attr("data-tooltip");
+    var tooltipParentH = $(this).outerHeight();
+    var parentPosition = $(this).position();
+    $(tooltip).insertAfter(this);
+    $(tooltip).css({
+      "max-width": document.body.clientWidth - parentPosition.left - 5 + "px",
+      "transition": "opacity 0.3s"
+    });
