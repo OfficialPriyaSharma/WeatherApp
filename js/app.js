@@ -321,3 +321,14 @@ function loadTooltips() {
       });
       $(this).on("blur", function () {
         hideTooltip();
+
+        _this.on("mouseleave", hideTooltip);
+      });
+      $(this).on("mouseenter", showTooltip);
+      $(this).on("mouseleave", hideTooltip);
+    } else {
+      $(this).on("mouseenter", showTooltip);
+      $(this).on("mouseleave", hideTooltip);
+    }
+  });
+} //Run
