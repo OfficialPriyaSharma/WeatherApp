@@ -303,3 +303,21 @@ function loadTooltips() {
         clearTimeout(timerHide);
         $(tooltip).on("mouseleave", hideTooltip);
       }
+      var timerHide = setTimeout(function () {
+        $(tooltip).css({
+          "visibility": "hidden",
+          "opacity": 0
+        });
+      }, 100);
+    }
+
+    var _this = $(this);
+
+    if (tag == "input") {
+      $(this).on("focus", function () {
+        showTooltip();
+
+        _this.off("mouseleave", hideTooltip);
+      });
+      $(this).on("blur", function () {
+        hideTooltip();
