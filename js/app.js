@@ -263,3 +263,14 @@ function animate(selector, keyFrameName, duration, delay = 0, timing = "ease", i
       "animation": keyFrameName + " " + duration + "ms " + timing + " " + iteration
     });
   }, delay);
+  if (iteration != "infinite") {
+    setTimeout(function () {
+      $(selector).css({
+        "animation": ""
+      });
+    }, (delay + duration) * iteration);
+  }
+}
+
+;
+/* https://codepen.io/sinapsis7 */
