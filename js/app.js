@@ -287,3 +287,11 @@ function loadTooltips() {
       "max-width": document.body.clientWidth - parentPosition.left - 5 + "px",
       "transition": "opacity 0.3s"
     });
+    function showTooltip() {
+      $(tooltip).css({
+        "visibility": "visible",
+        "opacity": 1,
+        "top": parentPosition.top + tooltipParentH + 10 + "px",
+        "left": parentPosition.left + "px"
+      });
+    }
