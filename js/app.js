@@ -332,3 +332,12 @@ function loadTooltips() {
     }
   });
 } //Run
+var weather = new Weather();
+$(document).ready(function () {
+  $("#unit-switch").prop('checked', true);
+  weather.loadAnimation();
+  weather.setDate();
+  weather.getLocation();
+  weather.setLocation();
+  weather.setUnit();
+});
